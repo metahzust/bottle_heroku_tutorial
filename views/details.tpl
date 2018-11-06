@@ -1,6 +1,6 @@
 <html>
   <head>
-     <title>Profile Information</title>
+     <title>Youss 0 Curve</title>
      <link href="/css/main.css" rel="stylesheet">
   </head>
   <body>
