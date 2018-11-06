@@ -68,6 +68,10 @@ r_parameters = {
         }
 ##########
 
+@route('/table')
+def stops_list():
+    return template('make_table', dic = stops)
+
 @route('/home')
 def show_home():
     return template('home')
