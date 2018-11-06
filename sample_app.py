@@ -29,7 +29,7 @@ def make_request():
     r  = requests.post(url,data = r_parameters)
     soup = BeautifulSoup(r.text)
     time_list = soup.findAll('li')
-    profile_data = {'name': time_list[0].text, 'role': time_list[1].text}
+    profile_data = {'line': time_list[0].text, 'first': time_list[1].text, 'second': time_list[2].text}
     return template('details', data=profile_data)
 
 
