@@ -8,7 +8,7 @@ from bottle import route, template, redirect, static_file, error, run
 
 from bs4 import BeautifulSoup
 
-stops = {'268765953|268766977': "Bois de l'Epine RER (1022)",
+stophs = {'268765953|268766977': "Bois de l'Epine RER (1022)",
  '268765954|268766978': 'Aunettes L.E.P. (1086)',
  '268765955|268766979': 'Camille Guerin (1078)',
  '268765956|268766980': 'Lyc\xc3\xa9e Parc des Loges (1057)',
@@ -58,7 +58,10 @@ stops = {'268765953|268766977': "Bois de l'Epine RER (1022)",
  '268767024': 'Les Tours (1620)',
  '268767025': 'Square (1586)',
  '268767026': 'Henri Dunant (1216)'}
-
+stops = {
+    '268765962|268766986': 'Evry Courcouronnes Centre RER (1640)',
+    '268799246|268800028': 'Mairie (1656)',
+}
 url = "https://dev.actigraph.fr/actipages/tice/pivk/relais.html.php"
 
 def get_form(refs = "268765962|268766986"):
