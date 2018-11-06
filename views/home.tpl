@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>Sample App Home</title>
+    <title>Youss 0 curve</title>
     <link href="/css/main.css" rel="stylesheet">
   </head>
   <body>
