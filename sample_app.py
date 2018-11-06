@@ -70,7 +70,7 @@ def get_form(refs = "268765962|268766986"):
     return r_parameters
 
 ##########
-@route('/ref/:no', method ='POST')
+@route('/ref/:no')
 def show_times(no):
     r_parameters = get_form(no)
     r  = requests.post(url,data = r_parameters)
