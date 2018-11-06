@@ -4,7 +4,7 @@
 %for key, value in dic.items():
   %id, title = key, value
   <tr>
-  %for col in row:
+  %for col in dic:
     <td>{{col}}</td>
   %end
   </tr>
