@@ -1,12 +1,13 @@
 %#template to generate a HTML table from a list of tuples (or list of lists, or tuple of tuples or ...)
 <p><h3>Your TODO Items:</h3></p>
 <table border="1">
-%for key, value in dic.items():
-  %id, title = key, value
+%for row in dic.items():
+  %id, title = row
   <tr>
-  %for col in dic:
+  %for col in row:
     <td>{{col}}</td>
   %end
+  <td><a href="/edit/{{id}}"> Edit</a></td>
   </tr>
 %end
 </table>
