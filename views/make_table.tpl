@@ -5,9 +5,9 @@
   %id, title = row
   <tr>
   %for col in row:
-    <td>{{col}}</td>
+    <td>{{col[1]}}</td>
   %end
-  <td><a href="/edit/{{id}}"> Edit</a></td>
+  <td><a href="/edit/{{id}}">Go</a></td>
   </tr>
 %end
 </table>
