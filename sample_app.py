@@ -61,12 +61,23 @@ stops = {'268765953|268766977': "Bois de l'Epine RER (1022)",
 
 url = "https://dev.actigraph.fr/actipages/tice/pivk/relais.html.php"
 
-r_parameters = {
-        "a":"refresh",
-        "refs":"268765962|268766986",
-        "ran":"807306871",
-        }
+def get_form(refs = "268765962|268766986"):
+    r_parameters = {
+            "a":"refresh",
+            "refs":refs,
+            "ran":"807306871",
+            }
+    return r_parameters
+
 ##########
+@route('/ref/:no', method ='POST')
+def show_times(no):
+    r_parameters = get_form(no)
+    r  = requests.post(url,data = r_parameters)
+    soup = BeautifulSoup(r.text)
+    time_list = soup.findAll('li')
+    profile_data = {'line': time_list[0].text, 'first': time_list[1].text, 'second': time_list[2].text}
+    return template('details', data=profile_data)
 
 @route('/table')
 def stops_list():
@@ -85,7 +96,7 @@ def handle_root_url():
 @route('/profile')
 def make_request():
     # make an API request here
-    r  = requests.post(url,data = r_parameters)
+    r  = requests.post(url, data = get_form)
     soup = BeautifulSoup(r.text)
     time_list = soup.findAll('li')
     profile_data = {'line': time_list[0].text, 'first': time_list[1].text, 'second': time_list[2].text}
