@@ -8,9 +8,10 @@ from bottle import route, template, redirect, static_file, error, run
 url = "https://dev.actigraph.fr/actipages/tice/pivk/relais.html.php"
 r_parameters = {
         "a":"refresh",
-        "refs":"268765979|268767003",
-        "ran":"5846",
+        "refs":"268765962|268766986",
+        "ran":"807306871",
         }
+from bs4 import BeautifulSoup
 
 @route('/home')
 def show_home():
@@ -26,7 +27,9 @@ def handle_root_url():
 def make_request():
     # make an API request here
     r  = requests.post(url,data = r_parameters)
-    profile_data = {'name': r.text, 'role': 'Developer'}
+    soup = BeautifulSoup(r.text)
+    time_list = soup.findAll('li')
+    profile_data = {'name': time_list[0].text, 'role': time_list[1].text}
     return template('details', data=profile_data)
 
 
