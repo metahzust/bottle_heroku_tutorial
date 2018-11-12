@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="60">
+<meta http-equiv="refresh" content="20">
 <html>
   <head>
      <title>cc moman</title>
