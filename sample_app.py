@@ -61,7 +61,7 @@ stophs = {'268765953|268766977': "Bois de l'Epine RER (1022)",
 stops = {
     '268765962|268766986': 'Evry Courcouronnes Centre RER (1640)',
     '268799246|268800028': 'Mairie (1656)',
-    "268765969|268766993": "Chemin de la Joute (1146)
+    "268765969|268766993": "Chemin de la Joute (1146)",
 }
 moman = {
     '268799246|268800028': 'Mairie (1656)',
