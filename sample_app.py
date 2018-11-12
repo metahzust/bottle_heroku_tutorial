@@ -95,6 +95,16 @@ def stops_list():
 def show_home():
     return template('home')
 
+@route('/moman')
+def make_mom():
+    data = []
+    for key,value in moman.items():
+        r  = requests.post(url, data = get_form(key))
+        soup = BeautifulSoup(r.text)
+        time_list = soup.findAll('li')
+        profile_data = {'line': value, 'first': time_list[1].text, 'second': time_list[2].text}
+        data.append(profile_data)
+    return template('moman', data=data)
 
 @route('/')
 def handle_root_url():
